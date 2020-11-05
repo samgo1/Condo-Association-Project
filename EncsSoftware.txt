@@ -1,6 +1,0 @@
-Software on ENCS (verified 01-11-2020)
-----------------
-
-php 5.5.38
-mysql 14.14
-apache 2.4.6
