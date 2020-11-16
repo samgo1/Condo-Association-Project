@@ -2,9 +2,9 @@
 <html>
     <head>
         <title>Con System</title>
-        <link rel="stylesheet" href="./styles/index.css">
-        <link rel="stylesheet" href="./styles/materialize.css">
-        <link rel="stylesheet" href="./styles/materialize.min.css">
+        <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="./css/materialize.css">
+        <link rel="stylesheet" href="./css/materialize.min.css">
     </head>
     <body>
         <div class="gridcontainer">
