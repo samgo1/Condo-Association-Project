@@ -1,6 +1,6 @@
 <?php 
 
-    class FinancialStatus extends Controller  {
+    class FinancialStatus {
         
     }
 ?>
