@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="./css/index.css">
-        <link rel="stylesheet" href="./css/materialize.css">
-        <link rel="stylesheet" href="./css/materialize.min.css">
-        <title>skeleton</title>
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="../css/materialize.css">
+        <link rel="stylesheet" href="../css/materialize.min.css">
+        <title>Con System</title>
     </head>
     <body>
         <div class="gridcontainer">
@@ -26,7 +26,7 @@
                 <button class="btn-flat">MENU 12</button>
                 <button class="btn-flat">MENU 13</button>
             </div>
-            <div class="mainview"></div>
+            <div class="mainview" id="mainView">financial status</div>
         </div>
     </body>
 </html>
