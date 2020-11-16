@@ -1,10 +1,12 @@
 <?php 
-
-    include './views/index.php'; 
     require_once('Routes.php');
 
     function __autoload($className){
-        require_once './classes/'.$className.'.php';
+        if (file_exists('./classes/'.$className.'.php')){
+            require_once './classes/'.$className.'.php';
+        }
+        else if (file_exists('./controllers/'.$className.'.php')){
+            require_once './controllers/'.$className.'.php';
+        }
     }
-    echo $_GET['url'];
 ?>
