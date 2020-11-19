@@ -16,6 +16,8 @@
                 <button class="btn-flat" onClick="show('dashboard')">Dashboard</button>
                 <button class="btn-flat" onClick="show('forums')">Forums</button>
                 <button class="btn-flat" onClick="show('financialStatus')">Financial Status</button>
+                <button class="btn-flat" onClick="show('contracts')">Contracts</button>
+                <button class="btn-flat" onClick="show('logout')">Logout</button>
             </div>
             <div class="mainview" id="mainView"></div>
         </div>
