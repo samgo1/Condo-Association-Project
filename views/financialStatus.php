@@ -1,3 +1,0 @@
-<h1>
-    FINANCIAL STATUS
-</h1>
