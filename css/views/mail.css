@@ -4,6 +4,7 @@
     display: grid;
     grid-template-rows: repeat(12, 1fr);
     grid-template-columns: repeat(12, 1fr);
+
 }
 
 .inboxContainer {
@@ -39,20 +40,35 @@
     grid-template-rows: repeat(12, 1fr);
     grid-row: 1/13;
     grid-column: 5/13;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 15px;
     background-color: aliceblue;
 }
 
 .bar {
     grid-row: 1/2;
-    padding: 15px;
-    margin: 10px;
     border-radius: 15px;
-    background-color: rgb(197, 197, 197);
 }
 
 .messageArea {
     grid-row: 2/13;
+    border-radius: 15px;
+}
+
+.newMail {
+}
+
+.image {
+    margin-top: 25px;
+    width: 40%;
+}
+
+.message {
+    background-color: #b1c5e3;
+    height: 100%;
+    width: 100%;
     padding: 15px;
-    background-color: rgb(245, 252, 255);
+    border-radius: 15px;
 }
 
