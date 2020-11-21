@@ -35,7 +35,7 @@ body {
 .mainview {
   grid-row: 2/13;
   grid-column: 3/13;
-  background-color: beige;
+  background-color: aliceblue;
 }
 
 .menubar button {

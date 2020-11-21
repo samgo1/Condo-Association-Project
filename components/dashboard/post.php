@@ -8,12 +8,12 @@
         This is the content
     </div>
     <div class="postLabel">Comments</div>
-    <div class="content">
-        <div name="commenter" class="commenter">Username and ID of commenter</div>
-        <span name="comment">
-            This is the comment
-        </span>
-    </div>
+    <?php 
+        include 'comment.php';
+        include 'comment.php';
+        include 'comment.php';
+        include 'comment.php';
+    ?>
     <form action="">
         <input type="text">
         <button class="btn">Comment</button>
