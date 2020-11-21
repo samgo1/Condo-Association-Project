@@ -3,7 +3,9 @@
         <textarea id="textarea" class="materialize-textarea" data-length="120"></textarea>
         <label for="textarea">To</label>
         <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
-        <label for="textarea2">Message</label>
+        <label for="textarea2">Subject</label>
+        <textarea id="textarea3" class="materialize-textarea" data-length="400"></textarea>
+        <label for="textarea3">Message</label>
         <div class="file-field input-field image">
             <div class="btn">
                 <i class="material-icons">image</i> 

@@ -44,6 +44,7 @@
     margin: 20px;
     border-radius: 15px;
     background-color: aliceblue;
+    overflow-y: scroll;
 }
 
 .bar {
@@ -65,10 +66,9 @@
 }
 
 .message {
-    background-color: #b1c5e3;
+    background-color: #c2d4f0;
     height: 100%;
     width: 100%;
     padding: 15px;
     border-radius: 15px;
 }
-
