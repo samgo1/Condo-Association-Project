@@ -1,3 +1,12 @@
-<h1>
-    DASHBOARD
-</h1>
+<div class="dashboard">
+    <?php 
+        include '../components/post.php';
+        include '../components/post.php';
+        include '../components/post.php';
+        include '../components/post.php';
+        include '../components/post.php';
+        include '../components/post.php';
+        include '../components/post.php';
+        include '../components/post.php';   
+    ?>
+</div>
