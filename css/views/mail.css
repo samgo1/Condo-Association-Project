@@ -1,74 +1,79 @@
 .mail {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-rows: repeat(12, 1fr);
-    grid-template-columns: repeat(12, 1fr);
-
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  background-color: #2b303a;
 }
 
 .inboxContainer {
-    grid-row: 1/13;
-    grid-column: 1/5;
-    background-color: #c2d4f0;
-    overflow-y: scroll;
+  grid-row: 1/13;
+  grid-column: 1/5;
+  background-color: #c2d4f0;
+  overflow-y: scroll;
+  margin-right: 5px;
 }
 
 .inboxItem {
-    background-color: #b1c5e3;
-    border-radius: 15px;
-    margin: 7px;
-    padding: 15px;
-    box-shadow:  -1px 1px #77aaff,
-         -1px 1px #77aaff,
-         -2px 2px #77aaff,
-         -2px 2px #77aaff,
-         -3px 3px #77aaff;
+  background-color: #b1c5e3;
+  border-radius: 15px;
+  margin: 7px;
+  padding: 15px;
 }
 
 .sender {
-    font-size: 1.2em;
-    font-weight: 600;
+  font-size: 1.2em;
+  font-weight: 600;
 }
 
 .inboxItem:hover {
-    background-color: #e1f3ff;
+  background-color: #e1f3ff;
 }
 
 .messageContainer {
-    display: grid;
-    grid-template-rows: repeat(12, 1fr);
-    grid-row: 1/13;
-    grid-column: 5/13;
-    padding: 15px;
-    margin: 20px;
-    border-radius: 15px;
-    background-color: aliceblue;
-    overflow-y: scroll;
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+  grid-row: 1/13;
+  grid-column: 5/13;
+  padding: 25px;
+  background-color: aliceblue;
+  overflow-y: scroll;
 }
 
 .bar {
-    grid-row: 1/2;
-    border-radius: 15px;
+  grid-row: 1/2;
+  border-radius: 15px;
+  margin-bottom: 25px;
 }
 
 .messageArea {
-    grid-row: 2/13;
-    border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
 }
 
 .newMail {
 }
 
 .image {
-    margin-top: 25px;
-    width: 40%;
+  margin-top: 25px;
+  width: 40%;
 }
 
 .message {
-    background-color: #c2d4f0;
-    height: 100%;
-    width: 100%;
-    padding: 15px;
-    border-radius: 15px;
+  background-color: #c2d4f0;
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.myTextarea {
+    margin-top: 10px;
+    border-width:1px;
+    padding: 10px;
+    height: 150px;
+    border-radius: 4px;
+    border-color: #9e9e9e;
 }

@@ -16,13 +16,13 @@
                 <img src="./assets/con logo.png" alt="">
             </div>
             <div class="menubar">
-                <button class="btn-flat" onClick="show('dashboard')">Dashboard</button>
-                <button class="btn-flat" onClick="show('mail')">Mail</button>
-                <button class="btn-flat" onClick="show('groups')">Groups</button>
-                <button class="btn-flat" onClick="show('members')">Members</button>
-                <button class="btn-flat" onClick="show('condos')">Condos</button>
-                <button class="btn-flat" onClick="show('requests')">Requests</button>
-                <button class="btn-flat" onClick="show('logout')">Logout</button>
+                <button onClick="show('dashboard')">Dashboard</button>
+                <button onClick="show('mail')">Mail</button>
+                <button onClick="show('groups')">Groups</button>
+                <button onClick="show('members')">Members</button>
+                <button onClick="show('condos')">Condos</button>
+                <button onClick="show('requests')">Requests</button>
+                <button onClick="show('logout')">Logout</button>
             </div>
             <div class="mainview" id="mainView"></div>
         </div>
