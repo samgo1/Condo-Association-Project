@@ -12,7 +12,7 @@ else{
 	echo '<h2> Welcome, '.$_SESSION['priviles'] .' '. $_SESSION['name'].'</h2>' ;
 	
 	if($_SESSION['priviles']='admin'){
-include_once '..\login\includes\signupbtn.inc.php';}
+include_once '..\login\includes\signupbtn.inc.html';}
 
 }
 

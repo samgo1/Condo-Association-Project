@@ -42,7 +42,7 @@ require_once 'dbh.inc.php';
     {
         //the form has been posted without, so save it
         //notice the use of mysql_real_escape_string, keep everything safe!
-        //also notice the sha1 function which hashes the password
+       
         $sql = "INSERT INTO
                    member(login_username,name,status,civic_address,email,privilege,login_password)
                 VALUES($_POST['uid']) ,
@@ -51,19 +51,20 @@ require_once 'dbh.inc.php';
                      $_POST['address']),
                      $_POST['user_email']),
                      $_POST['privilege'],
-                       sha1($_POST['psw']))";
+                     $_POST['psw'])";
                          
 
 
-        $result = mysql_query($sql);
+        $result = $conn->query($sql);
         if(!$result)
         {
             //something went wrong, display the error
             echo 'Something went wrong while registering. Please try again later.';
+            echo '<a href="/Condo-Association-Project/index.php">Go back to dashboard </a> ';
             //echo mysql_error(); //debugging purposes, uncomment when needed
         }
         else
         {
-            echo 'Successfully registered.  <a href="\Condo-Association-Project\views\dashboard.php">Go back to dashboard </a> ';
+            echo 'Successfully registered.  <a href="/Condo-Association-Project/index.php">Go back to dashboard </a> ';
         }
     }
