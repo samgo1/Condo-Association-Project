@@ -1,7 +1,3 @@
-
-<h1>
-    DASHBOARD
-</h1>
 <?php
 session_start();
 
@@ -25,3 +21,18 @@ include_once '..\login\includes\signupbtn.inc.php';}
 
 
   ?>
+<div class="dashboard">
+    <?php 
+        include '../components/dashboard/post.php';
+        include '../components/dashboard/post.php';
+        include '../components/dashboard/post.php';
+        include '../components/dashboard/post.php';
+        include '../components/dashboard/post.php';
+        include '../components/dashboard/post.php';
+        include '../components/dashboard/post.php';
+        include '../components/dashboard/post.php';
+        include '../components/dashboard/post.php';
+        include '../components/dashboard/post.php';
+        
+    ?>
+</div>
