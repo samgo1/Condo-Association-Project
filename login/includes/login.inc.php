@@ -14,11 +14,12 @@
                     FROM
                         member
                     WHERE
-                        login_username = '" . mysql_real_escape_string($_POST['uid']) . "'
+                        login_username = '" . mysqli_real_escape_string($conn, $_POST['uid']) . "'
                     AND
-                        login_password = '" . sha1($_POST['psw']) . "'";
+                        login_password = '" . mysqli_real_escape_string($conn, $_POST['psw']) . "'";
+                       
                          
-            $result = mysql_query($sql);
+             $result = $conn->query($sql);
 		 if(!$result)
             {
                 //something went wrong, display the error
@@ -30,7 +31,7 @@
                 //the query was successfully executed, there are 2 possibilities
                 //1. the query returned data, the user can be signed in
                 //2. the query returned an empty result set, the credentials were wrong
-                if(mysql_num_rows($result) == 0)
+                if(mysqli_num_rows($result) == 0)
                 {
                     echo 'You have supplied a wrong user/password combination. Please try again.';
                 }
@@ -41,14 +42,14 @@
                     $_SESSION['signed_in'] = true;
                      
                     //we also put the user_id and user_name values in the $_SESSION, so we can use it at various pages
-                    while($row = mysql_fetch_assoc($result))
+                    while($row = mysqli_fetch_assoc($result))
                     {
                  	    $_SESSION['name'] = $row['name'];
                         $_SESSION['user_name']  = $row['login_username'];
                         $_SESSION['privilege'] = $row['privilege'];
                     }
                      
-                    echo 'Welcome, ' . $_SESSION['user_name'] . '. <a href="\Condo-Association-Project\views\dashboard.php">Proceed to the forum overview</a>.';
+                    echo 'Welcome, ' . $_SESSION['user_name'] . '. <a href="/Condo-Association-Project/index.php">Proceed to the forum overview</a>.';
                 }
 
 

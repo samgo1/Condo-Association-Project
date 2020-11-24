@@ -2,15 +2,14 @@
 
 $server = 'localhost';
 $username   = 'root';
-$password   = 'Azerty';
-$database   = 'CONP';
+$password   = '';
+$database   = 'conproject';
  
-$link = mysqli_connect('{localhost}', '{root}', '{Azerty}', '{CONP}');
-//if connection is not successful you will see text error
-if (!$link) {
-       die('Could not connect: ' . mysql_error());
-}
-//if connection is successfully you will see message below
-echo 'Connected successfully';
- 
-//mysqli_close($link);
+//$conn = mysqli_connect($server, $username,$password, $database);
+
+$conn = mysqli_connect($server,$username,$password,$database);
+
+if (mysqli_connect_errno()) {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  exit();
+} 

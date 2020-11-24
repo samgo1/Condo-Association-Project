@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+input{
+
+   display: inline;
+
+}
+</style>
+</head>
+<body>
+
+<form action="\Condo-Association-Project\login\includes\signup.inc.php" style="border:1px solid #ccc background-color:white" method="post" >
+  <div class="container">
+    <h1>Sign Up</h1>
+    <h2>register a new CON member: </h2>
+    <hr>
+
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter name" name="name" required>
+    <br>
+   <input type="radio" id="active" name="status" value="active">
+   <label for="active"><b>active</b></label><br>
+
+   <input type="radio" id="inactive" name="status" value="inactive">
+   <label for="inactive"><b>inactive</b></label><br>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required><br>
+
+    <label for="login_username"><b>login_username</b></label>
+    <input type="text" placeholder="Enter username" name="uid" required><br>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required><br>
+   
+   <label for="address"><b>Address</b></label>
+    <input type="address" placeholder="Enter the address" name="address" required><br>
+
+ <input type="radio" id="admin" name="privilege" value="admin">
+   <label for="active">admin</label><br>
+
+   <input type="radio" id="regular" name="privilege" value="regular">
+   <label for="regular">regular</label><br>
+<button type="submit" class="registerbtn">Register</button>
+  </div>
+</form>
+</body>
+</html>
