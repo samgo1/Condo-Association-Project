@@ -42,16 +42,24 @@ require_once 'dbh.inc.php';
     {
         //the form has been posted without, so save it
         //notice the use of mysql_real_escape_string, keep everything safe!
+
+        $uid = $_POST['uid'];
+        $name = $_POST['name'];
+        $status = $_POST['status'];
+        $address = $_POST['address'];
+        $userEmail = $_POST['user_email'];
+        $privilege = $_POST['privilege'];
+        $psw = $_POST['psw'];
        
         $sql = "INSERT INTO
                    member(login_username,name,status,civic_address,email,privilege,login_password)
-                VALUES($_POST['uid']) ,
-              		   $_POST['name'],
-                    $_POST['status']) ,
-                     $_POST['address']),
-                     $_POST['user_email']),
-                     $_POST['privilege'],
-                     $_POST['psw'])";
+                VALUES($uid,
+              		   $name,
+                       $status,
+                       $address,
+                       $userEmail,
+                       $privilege,
+                       $psw)";
                          
 
 
