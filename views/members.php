@@ -1,17 +1,5 @@
 <?php
-//echo "Hello World\r\n";
-//phpinfo();
-
-$servername = "localhost";
-$username = "adminer";
-$password = "admin";
-$dbname = "webpractice";
-
-echo "<br>";
-echo "Connection: ",$servername,"/",$username,"/",$password,"/",$dbname;
-echo "<br>";
-
-
+include '/var/www/fp/var.php';
 //create connection
 $connection = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -22,7 +10,6 @@ if(mysqli_connect_errno()){
         . " (" . mysqli_connect_errno()
         . ")");
 }
-
 //get results from database
 $result = mysqli_query($connection,"SELECT * FROM member");
 //$result = mysqli_query($connection,"SELECT id,name,status,civic_address FROM member");
