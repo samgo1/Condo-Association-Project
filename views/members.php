@@ -1,17 +1,6 @@
+<input type="button" onclick="location.href='membercreate.php';" value="Click here to add new user" />
 <?php
-//echo "Hello World\r\n";
-//phpinfo();
-
-$servername = "localhost";
-$username = "adminer";
-$password = "admin";
-$dbname = "webpractice";
-
-echo "<br>";
-echo "Connection: ",$servername,"/",$username,"/",$password,"/",$dbname;
-echo "<br>";
-
-
+include 'var.php';
 //create connection
 $connection = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -22,14 +11,20 @@ if(mysqli_connect_errno()){
         . " (" . mysqli_connect_errno()
         . ")");
 }
+//echo '<a href="membercreate.php">Click here to add new user</a>';
 
+$SQLcommand = "SELECT CONCAT('ID=',id) as ID, name, status, civic_address, email, privilege, login_username, login_password from member";
+//$SQLcommand = "SELECT id , name, status, civic_address, email from member";
 //get results from database
-$result = mysqli_query($connection,"SELECT * FROM member");
+$result = mysqli_query($connection,$SQLcommand);
 //$result = mysqli_query($connection,"SELECT id,name,status,civic_address FROM member");
 
 $all_property = array();  //declare an array for saving property
 
+
+
 //showing property
+
 echo '<table class="data-table" border="2">
         <tr class="data-heading">';  //initialize table tag
 while ($property = mysqli_fetch_field($result)) {
@@ -42,7 +37,11 @@ echo '</tr>'; //end tr tag
 while ($row = mysqli_fetch_array($result)) {
     echo "<tr>";
     foreach ($all_property as $item) {
-        echo '<td>' . $row[$item] . '</td>'; //get items using property value
+        if (substr($row[$item], 0, 3) == 'ID=')
+        {   $ID = substr($row[$item], 3);
+            echo '<td> <a href="memberedit.php?ID='.$ID.'">'.$ID.'</td>';}
+
+        else { echo '<td>' . $row[$item] . '</td>'; }
     }
     echo '</tr>';
 }
