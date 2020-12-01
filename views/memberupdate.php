@@ -39,8 +39,12 @@ if($connection->affected_rows>=1){
 }else{
     echo "<p>($ud_ID) Not Updated<p>";
 }
+//echo <A HREF="/javascript/popup-windows/#Closing_Popup_Windows" onClick="return targetopener(this,true,true)">close</A>
 ?>
-<a href="members.php">Click here to go back to the members page</a>
+<script show('members'); ></script>
+<script src="index.js"></script>
+<button onclick="self.close()">Close</button>
+
 
 
 

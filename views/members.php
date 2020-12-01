@@ -1,4 +1,9 @@
-<input type="button" onclick="location.href='membercreate.php';" value="Click here to add new user" />
+<SCRIPT TYPE="text/javascript"> function popup(mylink, windowname)
+    { if (! window.focus)return true; var href; if (typeof(mylink) == 'string') href=mylink; else href=mylink.href; window.open(href, windowname, 'width=600,height=400,scrollbars=yes'); return false; }
+</SCRIPT>
+
+
+<input type="button" onclick="location.href='./views/membercreate.php';" value="Click here to add new user" />
 <?php
 include 'var.php';
 //create connection
@@ -39,7 +44,9 @@ while ($row = mysqli_fetch_array($result)) {
     foreach ($all_property as $item) {
         if (substr($row[$item], 0, 3) == 'ID=')
         {   $ID = substr($row[$item], 3);
-            echo '<td> <a href="memberedit.php?ID='.$ID.'">'.$ID.'</td>';}
+            //echo '<td> <a href=\'./views/memberedit.php?ID='.$ID.'\'>'.$ID.'</td>';
+            echo "<td> <A HREF=\"./views/memberedit.php?ID=".$ID."\" onClick=\" return popup(this, 'notes')\">".$ID."</A> </td>";
+        }
 
         else { echo '<td>' . $row[$item] . '</td>'; }
     }

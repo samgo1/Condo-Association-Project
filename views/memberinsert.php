@@ -31,7 +31,7 @@ if($connection->affected_rows>=1){
     echo "<p>($ud_name) Not Updated<p>";
 }
 ?>
-<a href="members.php">Click here to go back to the members page</a>
+<a href="/fp/index.php">Click here to go back to the members page</a>
 
 
 

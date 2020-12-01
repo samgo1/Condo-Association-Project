@@ -33,10 +33,22 @@ if(mysqli_num_rows($result)>=1){
         Modifying ID:<?=$UID;?><br>
         <input type="hidden" name="ID" value="<?=$UID;?>">
         Name: <input type="text" name="ud_name" value="<?=$name?>"><br>
-        Status: <input type="text" name="ud_status" value="<?=$status?>"><br>
+
+        Member's current Status: <?=$status?> <br>
+        <input type="radio" id="active" name="ud_status" value="active" <?php if($status == "active") {echo "checked";}?>>
+        <label for="active"><b>active</b></label><br>
+        <input type="radio" id="inactive" name="ud_status" value="inactive"<?php if($status == "inactive") {echo "checked";}?>>
+        <label for="inactive"><b>inactive</b></label><br>
         Civic address: <input type="text" name="ud_civic_address" value="<?=$civic_address?>"><br>
         Email: <input type="text" name="ud_email" value="<?=$email?>"><br>
-        Privilege: <input type="text" name="ud_privilege" value="<?=$privilege?>"><br>
+
+        Member's current Privilege: <?=$privilege?><br>
+
+        <input type="radio" id="regular" name="ud_privilege" value="regular" <?php if($privilege == "regular") {echo "checked";}?>>
+        <label for="regular"><b>regular</b></label><br>
+        <input type="radio" id="admin" name="ud_privilege" value="admin"<?php if($privilege == "admin") {echo "checked";}?>>
+        <label for="admin"><b>admin</b></label><br>
+
         Login_username: <input type="text" name="ud_login_username" value="<?=$login_username?>"><br>
         Login_username: <input type="text" name="ud_login_password" value="<?=$login_password?>"><br>
         <input type="Submit">

@@ -1,9 +1,9 @@
 <?php
 
 $server = 'localhost';
-$username   = 'root';
-$password   = '';
-$database   = 'conproject';
+$username   = 'adminer';
+$password   = 'admin';
+$database   = 'webpractice';
  
 //$conn = mysqli_connect($server, $username,$password, $database);
 
