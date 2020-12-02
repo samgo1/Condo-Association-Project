@@ -3,7 +3,7 @@
 </SCRIPT>
 
 
-<input type="button" onclick="location.href='./views/membercreate.php';" value="Click here to add new user" />
+<A HREF="./views/membercreate.php?" onClick=" return popup(this, 'notes')">Click here to add a new user</A>
 <?php
 include 'var.php';
 //create connection
