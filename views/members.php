@@ -2,7 +2,6 @@
     { if (! window.focus)return true; var href; if (typeof(mylink) == 'string') href=mylink; else href=mylink.href; window.open(href, windowname, 'width=600,height=400,scrollbars=yes'); return false; }
 </SCRIPT>
 
-
 <A HREF="./views/membercreate.php?" onClick=" return popup(this, 'notes')">Click here to add a new user</A>
 <?php
 include 'var.php';
