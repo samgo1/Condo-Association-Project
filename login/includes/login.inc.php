@@ -1,10 +1,15 @@
 <?php
-
-
     $psw=$_POST['psw'];
     $uid=$_POST['uid'];
     if (isset($psw)&&!empty($psw)&&isset($uid)&&!empty($uid) )  {
-		require_once 'dbh.inc.php';
+		include_once '..\..\var.php';
+
+$conn = mysqli_connect($servername,$username,$password,$dbname);
+
+if (mysqli_connect_errno()) {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  exit();
+} 
 		
 		 $sql = "SELECT 
                         id,
@@ -34,6 +39,8 @@
                 if(mysqli_num_rows($result) == 0)
                 {
                     echo 'You have supplied a wrong user/password combination. Please try again.';
+                    echo '<a href="/Condo-Association-Project/index.php">Proceed to the forum overview</a>.';
+              
                 }
                 else
                 {
@@ -47,6 +54,10 @@
                  	    $_SESSION['name'] = $row['name'];
                         $_SESSION['user_name']  = $row['login_username'];
                         $_SESSION['privilege'] = $row['privilege'];
+                        $_SESSION['id'] = $row['id'];
+
+
+
                     }
                      
                     echo 'Welcome, ' . $_SESSION['user_name'] . '. <a href="/Condo-Association-Project/index.php">Proceed to the forum overview</a>.';
@@ -57,7 +68,7 @@
 
 }else {
 	echo  $_POST['psw'].$_POST['uid'];
-echo 'SOmething went wrong!';
+echo 'Something went wrong!';
 //header('Location: ' . $_SERVER['HTTP_REFERER']);
 		exit();
 }

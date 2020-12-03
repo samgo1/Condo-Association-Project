@@ -51,6 +51,11 @@ require_once 'dbh.inc.php';
         $privilege = $_POST['privilege'];
         $psw = $_POST['psw'];
        
+		$valid_user =" SELECT * FROM `member` WHERE login_username=$uid";
+
+$validation = $conn->query($valid_user );//user not in the db, query return empty set
+if($validation)
+        {
         $sql = "INSERT INTO
                    member(login_username,name,status,civic_address,email,privilege,login_password)
                 VALUES($uid,
@@ -74,5 +79,11 @@ require_once 'dbh.inc.php';
         else
         {
             echo 'Successfully registered.  <a href="/Condo-Association-Project/index.php">Go back to dashboard </a> ';
+        }	
+        }else {
+        echo 'User name taken try again!';
+            echo '<a href="/Condo-Association-Project/index.php">Go back to dashboard </a> ';	
         }
+
+        
     }
