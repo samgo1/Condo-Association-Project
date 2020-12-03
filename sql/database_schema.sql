@@ -16,7 +16,7 @@ CREATE TABLE `member` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
   `status` enum('active','inactive') NOT NULL DEFAULT 'active',
-  `civic_address` varchar(40) DEFAULT NULL,
+  `civic_address` varchar(64) NOT NULL,
   `email` varchar(40) DEFAULT NULL,
   `privilege` enum('admin','regular') NOT NULL DEFAULT 'regular',
   `login_username` varchar(20) NOT NULL,
@@ -24,8 +24,8 @@ CREATE TABLE `member` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `member` VALUES ('1','Ed Casper','active','50169 McDermott Street Suite 176','hubert.schumm@example.com','regular','harum','54bbcb8b9f0e404354c7'),
-('2','Shayne Satterfield','active','913 Kristofer Shoal','kristopher00@example.net','regular','nostrum','aa4a385f5845949117c0'),
+INSERT INTO `member` VALUES ('1','Ed Casper','active','8 Donegani Ave Suite 201, Pointe-Claire, Quebec H9R 2V5','hubert.schumm@example.com','regular','login','login'),
+('2','Shayne Satterfield','active','8 Donegani Ave Suite 203, Pointe-Claire, Quebec H9R 2V5','kristopher00@example.net','regular','nostrum','aa4a385f5845949117c0'),
 ('3','Dr. Raymundo Cremin','active','790 Leonardo Greens Apt. 201','haag.murl@example.com','admin','aut','3dc7c45a8d347a0837eb'),
 ('4','Trystan Marvin','active','621 Kadin Alley Apt. 947','johnson.magali@example.org','regular','animi','1eea4760a68eb7f31886'),
 ('5','Dr. Dale Becker','active','6905 Aufderhar Tunnel','erika23@example.com','regular','aperiam','4e768ad2597bb73b39eb'),
@@ -104,15 +104,12 @@ CREATE TABLE `mailbox` (
   CONSTRAINT `mailbox_ibfk_2` FOREIGN KEY (`receiver_id`) REFERENCES `member` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `mailbox` VALUES ('1','1','2','2006-11-03 16:53:14','Aliquam sed omnis tempore eos assumenda. Rem eos necessitatibus in dolores distinctio. Odit sit quia quae reiciendis minus.'),
-('2','2','1','2005-12-20 15:25:41','Et consequuntur commodi quo eligendi nihil minus maiores. Tenetur porro qui qui ut ut sed. Aut adipisci ea dignissimos.'),
-('3','3','1','1995-12-31 10:34:26','Dolor voluptatem dolorem eveniet culpa reiciendis recusandae qui. Sequi est aut aperiam enim rerum. Dolor consequuntur veniam nostrum voluptatem commodi.'),
-('4','3','2','2000-01-29 21:41:22','Ea provident a sit totam ea ea ipsum. Recusandae architecto aut aut ab. Non ea totam perferendis.'),
-('5','5','2','1974-12-29 00:05:11','Natus repudiandae veritatis est rerum quo beatae. Ut blanditiis non possimus velit. Laudantium iure est reiciendis non facere aperiam.'),
-('6','6','1','2012-05-13 14:12:37','Sunt dolor adipisci rerum eum voluptas. Repellat omnis magnam natus consequatur a. Sunt occaecati dolores delectus et provident veniam qui.'),
-('7','7','3','2019-03-14 07:39:34','Vero nobis ea officia unde. Esse omnis qui dolor repellat assumenda libero nihil possimus. Velit accusantium doloremque consequuntur a. Voluptas nisi architecto numquam sequi explicabo delectus architecto fugiat. Alias dolorem illo recusandae optio corpor'),
-('8','8','3','2003-06-07 11:20:50','Sed placeat eos cum sit. Dolorum at sequi et velit quia saepe. Impedit laboriosam ut soluta consequatur. Repellendus voluptatibus voluptas necessitatibus.'),
-('9','9','2','2001-01-12 06:02:15','Et id eum dolores in velit. Dolorum neque illum hic nulla delectus in nostrum. Quia voluptatem a quisquam.');
+INSERT INTO `mailbox` VALUES ('1','1','2','2020-12-01 16:53:14','Would you like to take a walk with me?'),
+('2','2','1','2020-12-01 16:55:14','Sure, meet me at the lobby in 15mins'),
+('3','3','1','2020-12-01 12:39:03','Hey Casper, are you planning to decorate soon for Christmas?'),
+('4','3','1','2020-12-01 13:00:00','I got a lot of lights in the storage room you could use...'),
+('5','1','2','2020-12-02 13:00:00','I really enjoyed the walk, would you like to decorate the condo with me?'),
+('6','2','1','2020-12-02 16:45:00','Yes we can decorate the condo, I`ll bring my little boy.');
 
 
 CREATE TABLE `condo` (
@@ -121,11 +118,9 @@ CREATE TABLE `condo` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `condo` VALUES ('1','8542 Lawson Pines, Handchester, CT 66167'),
-('2','251 Alysha Glens, Port Angeline, IN 17815'),
-('3','325 Brent Heights, New Fernando, NY 56738'),
-('4','5766 Claire Streets, East Glendastad, RI '),
-('5','8029 Feest Plains Suite 896, South Jerrol'); 
+INSERT INTO `condo` VALUES ('1','8 Donegani Ave Suite 201, Pointe-Claire, Quebec H9R 2V5'),
+('2','5000-5002 Decelles Ave, Montreal, Quebec H3V 1E5'),
+('3','1288 Avenue des Canadiens-de-Montréal, Montréal, QC H3B 3B3');
 
 CREATE TABLE `condo_ownership` (
   `owner_id` tinyint(3) unsigned NOT NULL,
