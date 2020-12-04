@@ -24,7 +24,7 @@ CREATE TABLE `member` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `member` VALUES ('1','Ed Casper','active','8 Donegani Ave Suite 201, Pointe-Claire, Quebec H9R 2V5','hubert.schumm@example.com','regular','login','login'),
+INSERT INTO `member` VALUES ('1','DEMO USER','active','8 Donegani Ave Suite 201, Pointe-Claire, Quebec H9R 2V5','hubert.schumm@example.com','regular','login','login'),
 ('2','Shayne Satterfield','active','8 Donegani Ave Suite 203, Pointe-Claire, Quebec H9R 2V5','kristopher00@example.net','regular','nostrum','aa4a385f5845949117c0'),
 ('3','Dr. Raymundo Cremin','active','790 Leonardo Greens Apt. 201','haag.murl@example.com','admin','aut','3dc7c45a8d347a0837eb'),
 ('4','Trystan Marvin','active','621 Kadin Alley Apt. 947','johnson.magali@example.org','regular','animi','1eea4760a68eb7f31886'),
@@ -106,7 +106,7 @@ CREATE TABLE `mailbox` (
 
 INSERT INTO `mailbox` VALUES ('1','1','2','2020-12-01 16:53:14','Would you like to take a walk with me?'),
 ('2','2','1','2020-12-01 16:55:14','Sure, meet me at the lobby in 15mins'),
-('3','3','1','2020-12-01 12:39:03','Hey Casper, are you planning to decorate soon for Christmas?'),
+('3','3','1','2020-12-01 12:39:03','Hey, are you planning to decorate soon for Christmas?'),
 ('4','3','1','2020-12-01 13:00:00','I got a lot of lights in the storage room you could use...'),
 ('5','1','2','2020-12-02 13:00:00','I really enjoyed the walk, would you like to decorate the condo with me?'),
 ('6','2','1','2020-12-02 16:45:00','Yes we can decorate the condo, I`ll bring my little boy.');

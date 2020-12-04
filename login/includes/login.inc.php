@@ -58,7 +58,7 @@
                         $_SESSION['id'] = $row['id'];
                     }
                      
-                    echo 'Welcome, ' . $_SESSION['user_name'] . '. <a href="/Condo-Association-Project/index.php">Proceed to the forum overview</a>.';
+                    echo 'Welcome, ' . $_SESSION['name'] . '. <a href="/Condo-Association-Project/index.php">Proceed to the forum overview</a>.';
                 }
 
 
