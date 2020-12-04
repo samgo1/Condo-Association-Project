@@ -4,12 +4,12 @@
     if (isset($psw)&&!empty($psw)&&isset($uid)&&!empty($uid) )  {
 		include_once '..\..\var.php';
 
-$conn = mysqli_connect($servername,$username,$password,$dbname);
+    $conn = mysqli_connect($servername,$username,$password,$dbname);
 
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  exit();
-} 
+    if (mysqli_connect_errno()) {
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+      exit();
+    }
 		
 		 $sql = "SELECT 
                         id,
@@ -25,7 +25,7 @@ if (mysqli_connect_errno()) {
                        
                          
              $result = $conn->query($sql);
-		 if(!$result)
+            if(!$result)
             {
                 //something went wrong, display the error
                 echo 'Something went wrong while signing in. Please try again later.';
@@ -44,7 +44,8 @@ if (mysqli_connect_errno()) {
                 }
                 else
                 {
-                    session_start();
+                  // should be the only place where we start a session
+                  if(session_status() !== PHP_SESSION_ACTIVE) session_start();
                     //set the $_SESSION['signed_in'] variable to TRUE
                     $_SESSION['signed_in'] = true;
                      
@@ -55,20 +56,17 @@ if (mysqli_connect_errno()) {
                         $_SESSION['user_name']  = $row['login_username'];
                         $_SESSION['privilege'] = $row['privilege'];
                         $_SESSION['id'] = $row['id'];
-
-
-
                     }
                      
                     echo 'Welcome, ' . $_SESSION['user_name'] . '. <a href="/Condo-Association-Project/index.php">Proceed to the forum overview</a>.';
                 }
 
 
-	}
+	          }
 
-}else {
-	echo  $_POST['psw'].$_POST['uid'];
-echo 'Something went wrong!';
-//header('Location: ' . $_SERVER['HTTP_REFERER']);
-		exit();
-}
+    }else {
+	      echo  $_POST['psw'].$_POST['uid'];
+        echo 'Something went wrong!';
+        //header('Location: ' . $_SERVER['HTTP_REFERER']);
+		    exit();
+    }

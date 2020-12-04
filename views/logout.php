@@ -1,11 +1,11 @@
 <h1>LOGOUT</h1>
 <?php
-session_start();
+//session_start();
 unset($_SESSION['signed_in']);
 unset($_SESSION['name']);
 unset($_SESSION['user_name']);
 unset($_SESSION['privilege']);
 session_destroy();
-header("Location: /Condo-Association-Project/index.php");
+//header("Location: /Condo-Association-Project/index.php");
 exit();
 ?>
