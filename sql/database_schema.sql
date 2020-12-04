@@ -24,8 +24,8 @@ CREATE TABLE `member` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `member` VALUES ('1','DEMO USER','active','8 Donegani Ave Suite 201, Pointe-Claire, Quebec H9R 2V5','hubert.schumm@example.com','regular','login','login'),
-('2','Shayne Satterfield','active','8 Donegani Ave Suite 203, Pointe-Claire, Quebec H9R 2V5','kristopher00@example.net','regular','nostrum','aa4a385f5845949117c0'),
+INSERT INTO `member` VALUES ('1','DEMO ADMIN','active','8 Donegani Ave Suite 201, Pointe-Claire, Quebec H9R 2V5','hubert.schumm@example.com','admin','login','login'),
+('2','DEMO USER','active','8 Donegani Ave Suite 203, Pointe-Claire, Quebec H9R 2V5','kristopher00@example.net','regular','login2','login2'),
 ('3','Dr. Raymundo Cremin','active','790 Leonardo Greens Apt. 201','haag.murl@example.com','admin','aut','3dc7c45a8d347a0837eb'),
 ('4','Trystan Marvin','active','621 Kadin Alley Apt. 947','johnson.magali@example.org','regular','animi','1eea4760a68eb7f31886'),
 ('5','Dr. Dale Becker','active','6905 Aufderhar Tunnel','erika23@example.com','regular','aperiam','4e768ad2597bb73b39eb'),
