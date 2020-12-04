@@ -7,5 +7,6 @@ unset($_SESSION['user_name']);
 unset($_SESSION['privilege']);
 session_destroy();
 //header("Location: /Condo-Association-Project/index.php");
-exit();
+//exit();
 ?>
+<script> location.reload(); </script>
