@@ -11,19 +11,21 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     </head>
-    <body onload="show('mail')">
+    <?php $user_signed_in = isset($_SESSION["signed_in"])? true : false;?>
+     <body <?php if ($user_signed_in) echo "onload=\"show('mail')\">" ?>
         <div class="gridcontainer">
             <div class="header">
                 <img src="./assets/con logo.png" alt="">
             </div>
             <div class="menubar">
                 <button onClick="show('dashboard')">Dashboard</button>
-                <button onClick="show('mail')">Mail</button>
+                <?php if ($user_signed_in) echo "<button onClick=\"show('mail')\">Mail</button>" ?>
+                <?php if ($user_signed_in) echo "<button onClick=\"show('write_post')\">Write a post</button>" ?>
                 <button onClick="show('groups')">Groups</button>
                 <button onClick="show('members')">Members</button>
                 <button onClick="show('condos')">Condos</button>
                 <button onClick="show('requests')">Requests</button>
-                <button onClick="show('logout')">Logout</button>
+                <?php if ($user_signed_in) echo "<button onClick=\"show('logout')\">Logout</button>" ?>
             </div>
             <div class="mainview" id="mainView"></div>
         </div>
