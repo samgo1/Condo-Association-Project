@@ -1,11 +1,12 @@
 <?php
-    $psw=$_POST['psw'];
-    $uid=$_POST['uid'];
-    if (isset($psw)&&!empty($psw)&&isset($uid)&&!empty($uid) )  {
+   
+    if (isset($_POST['psw'])&&!empty($_POST['psw'])&&isset($_POST['uid'])&&!empty($_POST['uid']) )  {
 		include_once '..\..\var.php';
 
     $conn = mysqli_connect($servername,$username,$password,$dbname);
 
+ $psw=$_POST['psw'];
+    $uid=$_POST['uid'];
     if (mysqli_connect_errno()) {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
       exit();
@@ -65,8 +66,8 @@
 	          }
 
     }else {
-	      echo  $_POST['psw'].$_POST['uid'];
-        echo 'Something went wrong!';
+	      
+        echo '<b> illegal access! Please access to the login properly!!<b>';
         //header('Location: ' . $_SERVER['HTTP_REFERER']);
 		    exit();
     }

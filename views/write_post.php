@@ -1,4 +1,4 @@
-
+<?php if(session_status() !== PHP_SESSION_ACTIVE) session_start();?>
   <h1> Write a post</h1>
   <p> writer: <?php echo $_SESSION["name"] ?></p>
   <form class="col s12" action="/controllers/post.php" method="post">
