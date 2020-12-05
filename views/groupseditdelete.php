@@ -11,18 +11,14 @@ if(mysqli_connect_errno()){
         . ")");
 }
 
-//$ud_ID = (int)$_POST["ID"];
-$ud_name = $_POST["ud_name"];
-$ud_civic_address = $_POST["ud_civic_address"];
-$ud_email = $_POST["ud_email"];
-$ud_login_username = $_POST["ud_login_username"];
-$ud_login_password = $_POST["ud_login_password"];
-
-echo "Name: ".$ud_name."<br>";
+$GID = (int)$_GET['GID'];
+$UID = (int)$_GET['UID'];
 
 
-$query="INSERT INTO member (name, civic_address, email, login_username, login_password)
-VALUES('$ud_name','$ud_civic_address','$ud_email','$ud_login_username','$ud_login_password')";
+echo "You have removed user with ID: $UID from group: $GID<br>";
+
+
+$query="delete from group_membership where group_id=$GID and member_id=$UID";
 
 //mysqli_query($connection,$query)or die(mysqli_error());
 //if($connection->affected_rows>=1){
@@ -35,8 +31,8 @@ if (!$connection -> query($query)) {
 }
 
 $connection -> close();
+echo  '<td><a  href=groupsedit.php?ID='.$GID.'>Click here to further modify the group</a></td>';
+
 ?>
-<button onclick="self.close()">Close</button>
-
-
-
+<!input type="button" onclick="location.href='groupsedit.php';" value="Click here to further modify the group" />
+<button onclick="self.close()">Click here to exit popup</button>
