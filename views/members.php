@@ -2,6 +2,7 @@
     { if (! window.focus)return true; var href; if (typeof(mylink) == 'string') href=mylink; else href=mylink.href; window.open(href, windowname, 'width=600,height=400,scrollbars=yes'); return false; }
 </SCRIPT>
 <?php
+<<<<<<< HEAD
 if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 if(!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] == false)
 {
@@ -26,6 +27,9 @@ else
 
 echo '<A HREF="./views/membercreate.php?" onClick=" return popup(this, \'notes\')">Click here to add a new user</A>'
 include 'var.php';
+=======
+include '../var.php';
+>>>>>>> login
 //create connection
 $connection = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -36,10 +40,13 @@ if(mysqli_connect_errno()){
         . " (" . mysqli_connect_errno()
         . ")");
 }
+<<<<<<< HEAD
 //echo '<a href="membercreate.php">Click here to add new user</a>';
 
 $SQLcommand = "SELECT CONCAT('ID=',id) as ID, name, status, civic_address, email, privilege, login_username, login_password from member";
 //$SQLcommand = "SELECT id , name, status, civic_address, email from member";
+=======
+>>>>>>> login
 //get results from database
 $result = mysqli_query($connection,$SQLcommand);
 //$result = mysqli_query($connection,"SELECT id,name,status,civic_address FROM member");
