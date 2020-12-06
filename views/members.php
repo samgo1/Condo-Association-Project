@@ -1,10 +1,30 @@
 <SCRIPT TYPE="text/javascript"> function popup(mylink, windowname)
     { if (! window.focus)return true; var href; if (typeof(mylink) == 'string') href=mylink; else href=mylink.href; window.open(href, windowname, 'width=600,height=400,scrollbars=yes'); return false; }
 </SCRIPT>
-
-
-<A HREF="./views/membercreate.php?" onClick=" return popup(this, 'notes')">Click here to add a new user</A>
 <?php
+if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+if(!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] == false)
+{
+    echo "Illegal access";
+    echo '<a href="/Condo-Association-Project/index.php">Proceed to the forum overview</a>.';
+}
+
+
+
+//connected
+else
+    {
+
+    echo '<h2> Welcome, '. $_SESSION['name'].'</h2>' ;
+
+    if(isset($_SESSION["privilege"]) && $_SESSION['privilege']==='admin'){
+        echo '<h> your have '. $_SESSION['privilege'] .' privilege </h3>';
+}
+
+}
+
+
+echo '<A HREF="./views/membercreate.php?" onClick=" return popup(this, \'notes\')">Click here to add a new user</A>'
 include 'var.php';
 //create connection
 $connection = mysqli_connect($servername, $username, $password, $dbname);
