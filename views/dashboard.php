@@ -9,8 +9,8 @@ $conn = mysqli_connect($servername,$username,$password,$dbname);
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   exit();
-} 
-	
+}
+//header('Location: https://192.168.1.16/fp/login/includes/loginbtn.inc.php');
 include '../login/includes/loginbtn.inc.php';
 
 

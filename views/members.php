@@ -18,9 +18,9 @@ else {
     echo '<h2> Welcome, ' . $_SESSION['name'] . '</h2>';
 
     if (isset($_SESSION["privilege"]) && $_SESSION['privilege'] === 'admin') {
-        echo '<h> your have ' . $_SESSION['privilege'] . ' privilege </h3>';
+        echo '<h> You have ' . $_SESSION['privilege'] . ' privilege </h3>';
     }
-
+    //echo $_SESSION['id'];
 
     echo '<A HREF="./views/membercreate.php?" onClick=" return popup(this, \'notes\')">Click here to add a new user</A>';
     include 'var.php';
@@ -39,8 +39,8 @@ else {
 
 //echo '<a href="membercreate.php">Click here to add new user</a>';
 
-    $SQLcommand = "SELECT CONCAT('ID=',id) as ID, name, status, civic_address, email, privilege, login_username, login_password from member";
-//$SQLcommand = "SELECT id , name, status, civic_address, email from member";
+    if ($_SESSION['privilege'] === 'admin'){$SQLcommand = "SELECT CONCAT('ID=',id) as ID, name, status, civic_address, email, privilege, login_username, login_password from member";}
+    else {$SQLcommand = "SELECT id , name, status, civic_address, email from member";}
 
 
 //get results from database
