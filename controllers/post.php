@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samuelg
- * Date: 12/3/2020
- * Time: 6:48 PM
- */
 
 $author_id = $_POST['author_id'];
 $visibility_list = $_POST['visibility'];
@@ -14,18 +8,21 @@ $date_time = $_POST['date_time'];
 $has_file = $_FILES['file_to_upload']['name'] !== "";
 $target_dir = null;
 $target_file = null;
+
 if ($has_file){
-  // target_dir must be set for your own machine
-  $target_dir = "C:/Users/samuelg/school/comp353/project/Condo-Association-Project/posts_pictures/";
+
+  $target_dir = __DIR__ . "/../posts_pictures/";
+  if (!file_exists($target_dir)){
+    $result = mkdir($target_dir);
+    if (result == false){
+      echo "didn't work making the directory " . $target_dir;
+      exit;
+    }
+  }
+
   $target_file = $target_dir . basename($_FILES["file_to_upload"]["name"]);
   $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
   $uploadOk = 1;
-  // Check if file already exists
-  if (file_exists($target_file)) {
-    echo "Sorry, file already exists.\n";
-    $uploadOk = 0;
-  }
 
   // Allow certain file formats
   if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
@@ -94,6 +91,8 @@ if ($result){
   echo "Error entering post.";
 }
 
+//$filename = basename($_FILES["file_to_upload"]["name"]);
+//echo "<img src=\"/Condo-Association-Project/posts_pictures/" . $filename . "\" />";
 echo "    <a href=\"/Condo-Association-Project/index.php\">go to main page</a>";
 
 
