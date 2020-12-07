@@ -1,7 +1,7 @@
 <?php
 
 $author_id = $_POST['author_id'];
-$visibility_list = $_POST['visibility'];
+$visibility_list = isset($_POST['visibility']) ? $_POST['visibility'] : null;
 $post_permission = $_POST['permission'];
 $content_text = $_POST['content_text'];
 $date_time = $_POST['date_time'];
@@ -81,10 +81,12 @@ if ($result){
   $result = $conn->query($sql);
 
   // post visibility queries
-  foreach ($visibility_list as $value) {
-    $sql = "INSERT INTO `post_visibility` VALUES(
+  if ($visibility_list !== null){
+    foreach ($visibility_list as $value) {
+      $sql = "INSERT INTO `post_visibility` VALUES(
           '{$post_id}', '{$value}')";
-    $result = $conn->query($sql);
+      $result = $conn->query($sql);
+    }
   }
 
 } else {

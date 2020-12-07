@@ -6,7 +6,7 @@
     </div>
   </div>
 
-  <form action="\Condo-Association-Project\controllers\post.php" method="post" enctype="multipart/form-data">
+  <form id="write_post_form" action="\Condo-Association-Project\controllers\post.php" method="post" enctype="multipart/form-data" >
     <div class="row">
       <div class="input-field col s4 push-l2">
         <textarea id="content_text" class="materialize-textarea" name="content_text" maxlength="255" data-length="255"></textarea>
@@ -26,11 +26,11 @@
     <div class="row">
       <div class="col s4 push-l2">
         <label>post visibility</label>
-        <select name="visibility[]" multiple required>
+        <select id="visibility_list" name="visibility[]" multiple="multiple">
           <?php
             $sql = "SELECT id, name FROM member WHERE id IN (
                       SELECT member_id FROM group_membership WHERE group_id IN (
-                        SELECT group_id from group_membership WHERE member_id = '1'))
+                        SELECT group_id from group_membership WHERE member_id = '{$_SESSION['id']}'))
                     group by id;";
 
             include_once "../var.php";
@@ -70,6 +70,11 @@
         <button class="btn" type="submit">make post</button>
       </div>
     </div>
+    <div class="row">
+      <div class="col push-l2">
+        <div id="error_on_submit"></div>
+      </div>
+    </div>
   </form>
 
   <script>
@@ -79,4 +84,8 @@
     $(document).ready(function(){
       $('select').formSelect();
     });
+    function validate() {
+      print("hello");
+
+    }
   </script>
