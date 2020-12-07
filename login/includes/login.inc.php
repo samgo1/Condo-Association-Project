@@ -2,9 +2,9 @@
     $psw=$_POST['psw'];
     $uid=$_POST['uid'];
     if (isset($psw)&&!empty($psw)&&isset($uid)&&!empty($uid) )  {
-		include_once '..\..\var.php';
+		include_once '../../views/var.php';
 
-    $conn = mysqli_connect($servername,$username,$password,$dbname);
+		$conn = mysqli_connect($servername,$username,$password,$dbname);
 
     if (mysqli_connect_errno()) {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -39,7 +39,7 @@
                 if(mysqli_num_rows($result) == 0)
                 {
                     echo 'You have supplied a wrong user/password combination. Please try again.';
-                    echo '<a href="/Condo-Association-Project/index.php">Proceed to the forum overview</a>.';
+                    echo '<a href="../../index.php">Proceed to the forum overview</a>.';
               
                 }
                 else
@@ -58,7 +58,7 @@
                         $_SESSION['id'] = $row['id'];
                     }
                      
-                    echo 'Welcome, ' . $_SESSION['name'] . '. <a href="/Condo-Association-Project/index.php">Proceed to the forum overview</a>.';
+                    echo 'Welcome, ' . $_SESSION['name'] . '. <a href="../../index.php">Proceed to the forum overview</a>.';
                 }
 
 

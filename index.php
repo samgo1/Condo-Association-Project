@@ -11,7 +11,8 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     </head>
-    <?php $user_signed_in = isset($_SESSION["signed_in"])? true : false;?>
+    <?php if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+    $user_signed_in = isset($_SESSION["signed_in"])? true : false;?>
      <body <?php if ($user_signed_in) echo "onload=\"show('mail')\">" ?>
         <div class="gridcontainer">
             <div class="header">
