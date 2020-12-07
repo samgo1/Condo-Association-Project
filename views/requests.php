@@ -38,7 +38,7 @@ else {
 
 
     $SQLcommand="SELECT gr.reqid, gr.user_ID, m.`name` as user_name, gr.group_ID, g.name as group_name, 'accept', 'deny'
-    FROM grouprequests gr 
+    FROM requests gr 
     join member m on gr.user_ID = m.id 
     join `group` g on gr.group_ID = g.id
     where gr.active=1";
