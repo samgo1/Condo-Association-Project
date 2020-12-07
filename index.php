@@ -29,6 +29,7 @@
             </div>
             <div class="mainview" id="mainView"></div>
         </div>
+        <script src="index.js"></script>
+        <script type="text/javascript" src="js/materialize.js"></script>
     </body>
-    <script src="index.js"></script>
 </html>
