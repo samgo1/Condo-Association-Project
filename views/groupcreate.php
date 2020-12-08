@@ -4,7 +4,7 @@ if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 if(!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] == false)
 {
 echo "Illegal access";
-echo '<a href="/fp/index.php">Proceed to the forum CON general page</a>.';
+echo '<a href="../index.php">Proceed to the forum CON general page</a>.';
 }
 
 

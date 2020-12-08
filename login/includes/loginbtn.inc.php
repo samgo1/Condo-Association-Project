@@ -131,7 +131,7 @@ span.psw {
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" type="submit" action="/fp/login/includes/login.inc.php" method="post">
+  <form class="modal-content animate" type="submit" action="/Condo-Association-Project/login/includes/login.inc.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       
