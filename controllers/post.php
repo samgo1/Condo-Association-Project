@@ -14,7 +14,7 @@ if ($has_file){
   $target_dir = __DIR__ . "/../posts_pictures/";
   if (!file_exists($target_dir)){
     $result = mkdir($target_dir);
-    if (result == false){
+    if ($result == false){
       echo "didn't work making the directory " . $target_dir;
       exit;
     }

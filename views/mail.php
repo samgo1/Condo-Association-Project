@@ -1,24 +1,8 @@
 <div class="mail">
     <div class="inboxContainer">
         <?php
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
+            include '../controllers/getMailItem.php';
+            showMailItem('Radley Carpio', '123', '2020/12/08', '');
         ?>
     </div>
     <div class="messageContainer">
@@ -30,3 +14,7 @@
     </div>
 </div>
 <script src="controllers\mail.js"></script>
+
+
+<?php 
+?>

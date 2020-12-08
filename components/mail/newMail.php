@@ -1,5 +1,12 @@
+<?php 
+   function mailer(){
+
+    print("FUCK YOU ");
+   }
+?>
+
 <div class="newMail">
-        <form type="submit" action="/Condo-Association-Project/controllers/mailer.php" method="post">
+    <form type="submit" action="mailer()" method="post">
        <label for="receiver_id">To</label>
         <textarea id="receiver_id" class="materialize-textarea" data-length="120"></textarea>
               <label for="message_content">Message</label>
@@ -8,7 +15,7 @@
         <div>
             <br>
           
-            <input type="submit" class="btn" value="Send">
+            <button type="submit" class="btn">Send</button>
         </div>
     </form>
 </div>
