@@ -1,0 +1,44 @@
+.dashboard {
+  justify-content: center;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.postContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #c2d4f0;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  padding: 20px;
+  min-height: 20%;
+  width: 60%;
+}
+
+.postLabel {
+  font-weight: bolder;
+  font-size: 24px;
+}
+
+.content {
+  background-color: #b1c5e3;
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 15px;
+}
+
+.comments {
+  list-style-type: none;
+}
+
+.commenter {
+  font-weight: 600;
+}
+
+.login {
+  
+}
