@@ -7,7 +7,7 @@ if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 if(!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] == false)
 {
     echo "Illegal access";
-    echo '<a href="/fp/index.php">Proceed to the forum CON general page</a>.';
+    echo '<a href="../index.php">Proceed to the forum CON general page</a>.';
 }
 
 
@@ -17,9 +17,6 @@ else {
 
     echo '<h2> Welcome, ' . $_SESSION['name'] . '</h2>';
 
-    if (isset($_SESSION["privilege"]) && $_SESSION['privilege'] === 'admin') {
-        echo '<h> You have ' . $_SESSION['privilege'] . ' privilege </h3><br>';
-    }
     //echo $_SESSION['id'];
 
     include 'var.php';

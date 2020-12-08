@@ -9,6 +9,7 @@ drop table if exists condo_ownership;
 drop table if exists post;
 drop table if exists post_visibility;
 drop table if exists `comment`;
+drop table if exists requests;
 
 SET FOREIGN_KEY_CHECKS=1;
 
@@ -189,5 +190,14 @@ INSERT INTO `comment` VALUES
 ('2', '2020-12-03 17:51:00', '3', 'I don\'t have a key for the backdoor :(', '1'),
 ('3', '2020-11-29 09:00:00', '1', 'YEESSSSSSS', '2'),
 ('4', '2020-12-01 09:05:00', '3', 'My internet is still slow, call me', '2');
+
+CREATE TABLE requests (
+  reqid int(10) unsigned NOT NULL AUTO_INCREMENT,
+  user_ID int(11) NOT NULL,
+  group_ID int(11) NOT NULL,
+  status varchar(20) COLLATE utf8_bin NOT NULL DEFAULT 'active',
+  result varchar(20) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (reqid)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 
