@@ -3,7 +3,7 @@
     if (isset($_POST['psw'])&&!empty($_POST['psw'])&&isset($_POST['uid'])&&!empty($_POST['uid']) )  {
 		include_once '..\..\var.php';
 
-    $conn = mysqli_connect($servername,$username,$password,$dbname);
+		$conn = mysqli_connect($servername,$username,$password,$dbname);
 
  $psw=$_POST['psw'];
     $uid=$_POST['uid'];
@@ -40,7 +40,7 @@
                 if(mysqli_num_rows($result) == 0)
                 {
                     echo 'You have supplied a wrong user/password combination. Please try again.';
-                    echo '<a href="/Condo-Association-Project/index.php">Proceed to the forum overview</a>.';
+                    echo '<a href="../../index.php">Proceed to the forum overview</a>.';
               
                 }
                 else
@@ -59,7 +59,7 @@
                         $_SESSION['id'] = $row['id'];
                     }
                      
-                    echo 'Welcome, ' . $_SESSION['name'] . '. <a href="/Condo-Association-Project/index.php">Proceed to the forum overview</a>.';
+                    echo 'Welcome, ' . $_SESSION['name'] . '. <a href="../../index.php">Proceed to the forum overview</a>.';
                 }
 
 
