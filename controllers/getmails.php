@@ -18,17 +18,39 @@ else
 
 $reciever_id=$_SESSION['id']; 
 
-$result = mysqli_query($conn,"SELECT name,message_content,date_time FROM mailbox INNER JOIN member ON sender_id=id");
+//$result = mysqli_query($conn,"SELECT 'name','message_content','date_time' FROM mailbox INNER JOIN member ON sender_id=id");
+
+$query = "SELECT * FROM mailbox mb JOIN member m ON mb.sender_id=m.id WHERE receiver_id=$reciever_id ORDER BY date_time DESC";
+
+$result = $conn -> query($query);
+
+//Store all the messages in an array.
+
+$rows = [];
+
+if ($result->num_rows > 0) {
+	// output data of each row
+	while($row = $result->fetch_assoc()) {
+	  array_push($rows, $row);
+	}
+  } else {
+	echo "0 results";
+  }
+  $conn->close();
+
+//echo json_encode($rows);
 
 
-$all_property = array(); 	
-while ($property = mysqli_fetch_field($result)) {
+foreach($rows as &$mail){
 
-    array_push($all_property, $property->name);  //save those to array
+	showMailItem($mail['name'], $mail['sender_id'], $mail['date_time'], $mail['message_content']);
 }
 
-//echo $result;
 
-echo $reciever_id;
+function showMailItem($senderName, $senderID, $dateSent, $content){
 
+    echo "<div class=\"inboxItem\" onclick=\"showMessageItem('$senderName', '$senderID', '$dateSent', '$content')\">
+    <div name=\"sender\" class=\"sender\">$senderName $senderID</div>
+    <div name=\"subject\" class=\"subject\">$dateSent</div></div>";
+}
 ?>
