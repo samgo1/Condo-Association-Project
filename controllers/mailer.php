@@ -1,9 +1,6 @@
 <?php 
 
-function mailer(){
-
-    print("Message here");
-}
+echo "Hello World";
 
 ?>
 

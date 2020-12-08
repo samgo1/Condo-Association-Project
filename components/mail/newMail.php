@@ -1,22 +1,13 @@
-<?php 
-   function mailer(){
-
-    print("FUCK YOU ");
-   }
-?>
-
 <div class="newMail">
-    <form type="submit" action="mailer()" method="post">
-       <label for="receiver_id">To</label>
-        <textarea id="receiver_id" class="materialize-textarea" data-length="120"></textarea>
-              <label for="message_content">Message</label>
-       <textarea id="message_content" class="myTextarea" data-length="400"></textarea>
-        </div>
+    <form id="write_post_form" action="\Condo-Association-Project\controllers\mailer.php" method="post" enctype="multipart/form-data" >
+        <label>To</label>
+        <textarea class="materialize-textarea"></textarea>
+        <label>Message</label>
+        <textarea class="myTextarea"></textarea>
         <div>
             <br>
-          
-            <button type="submit" class="btn">Send</button>
+            <button class="btn" type="submit">Send</button>
         </div>
     </form>
 </div>
-
+   
