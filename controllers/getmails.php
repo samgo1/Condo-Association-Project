@@ -13,6 +13,7 @@ else{//user logged in
 		exit();
 	} 
 //get results from database
+/*
 $reciever_id=$_SESSION['id'] ;//user login in is the receiver
 $result = mysqli_query($conn,"SELECT sender_id,date_time,message_content FROM mailbox WHERE receiver_id=$reciever_id ");
 if(!$result)
@@ -45,4 +46,50 @@ while ($row = mysqli_fetch_array($result)) {
 echo "</table>";
 }
 
+}*/
+<?php
+
+$server = 'localhost';
+$username   = 'root';
+$password   = '';
+$database   = 'conproject';
+
+//$conn = mysqli_connect($server, $username,$password, $database);
+
+
+$result = mysqli_query($conn,"SELECT name,message_content,date_time FROM mailbox INNER JOIN member ON sender_id=id");
+
+$all_property = array(); 	
+while ($property = mysqli_fetch_field($result)) {
+    array_push($all_property, $property->name);  //save those to array
 }
+
+//showing all data
+
+$result_name='';
+$result_msg='';
+$result_date='';
+getemail(0,$result_name,$result_msg,$result_date,$all_property,$result);
+
+function getemail ($email_number,&$result_name,&$result_msg,&$result_date,&$all_property,&$result){
+	while ($email_number>=0) {
+		$row = mysqli_fetch_array($result);
+		echo "<div>";
+		foreach ($all_property as $item) {
+			if($item=='name'){
+				$result_name=$row[$item];
+
+			}
+			if($item=='message_content')
+				$result_msg=$row[$item];
+			if($item=='date_time')
+				$result_date=$row[$item];
+		}
+		$email_number--;
+	}
+}
+
+echo $result_name.' sent you : '.$result_msg.' on : '.$result_date;
+
+
+
