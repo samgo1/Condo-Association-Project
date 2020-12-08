@@ -157,7 +157,7 @@ CREATE TABLE `post_visibility` (
   `member_id` tinyint(3) unsigned NOT NULL,
   PRIMARY KEY (`post_id`,`member_id`),
   KEY `member_id` (`member_id`),
-  CONSTRAINT `post_visibility_ibfk_1` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`),
+  CONSTRAINT `post_visibility_ibfk_1` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`) ON DELETE CASCADE,
   CONSTRAINT `post_visibility_ibfk_2` FOREIGN KEY (`member_id`) REFERENCES `member` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -181,8 +181,8 @@ CREATE TABLE `comment` (
   PRIMARY KEY (`id`),
   KEY `commentor_id` (`commentor_id`),
   KEY `post_id` (`post_id`),
-  CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`commentor_id`) REFERENCES `member` (`id`),
-  CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`)
+  CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`commentor_id`) REFERENCES `member` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `comment` VALUES 
