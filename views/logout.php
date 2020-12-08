@@ -6,7 +6,7 @@ unset($_SESSION['name']);
 unset($_SESSION['user_name']);
 unset($_SESSION['privilege']);
 session_destroy();
-header("Location: ../index.php");
+//header("Location: ../index.php");
 //exit();
 ?>
 <script> location.reload(); </script>

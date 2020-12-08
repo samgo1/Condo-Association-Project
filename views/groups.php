@@ -88,7 +88,7 @@ else {
             }
             elseif(substr($row[$item], 0, 4) == 'RID='){
                     $ID = substr($row[$item], 4);
-                    echo "<td> <A HREF=\"./views/groupsrequests.php?ID=" . $ID . "\" onClick=\" return popup(this, 'notes')\" title='Request to join group'>" . $ID . "</A> </td>";
+                    echo "<td> <A HREF=\"./views/groupsrequest.php?ID=" . $ID . "\" onClick=\" return popup(this, 'notes')\" title='Request to join group'>" . $ID . "</A> </td>";
             }
             elseif (substr($row[$item], 0, 6) == 'delgr=' ) {
                 $ID = substr($row[$item], 6);

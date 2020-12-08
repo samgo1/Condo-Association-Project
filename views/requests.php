@@ -37,11 +37,17 @@ else {
     }
 
 
-    $SQLcommand="SELECT gr.reqid, gr.user_ID, m.`name` as user_name, gr.group_ID, g.name as group_name, 'accept', 'deny'
+    $SQLcommand= "SELECT gr.reqid, gr.user_ID, m.`name` as user_name, gr.group_ID, g.name as group_name,gr.status, gr.result, concat('accept=',gr.reqid) as accept, concat('deny=',gr.reqid) as deny
     FROM requests gr 
     join member m on gr.user_ID = m.id 
     join `group` g on gr.group_ID = g.id
-    where gr.active=1";
+    where gr.status = 'active'
+    UNION
+    SELECT gr.reqid, gr.user_ID, m.`name` as user_name, gr.group_ID, g.name as group_name,gr.status, gr.result, 'accept', 'deny'
+    FROM requests gr 
+    join member m on gr.user_ID = m.id 
+    join `group` g on gr.group_ID = g.id
+    where gr.status != 'active'";
 
 
 
@@ -67,11 +73,20 @@ else {
     while ($row = mysqli_fetch_array($result)) {
         echo "<tr>";
         foreach ($all_property as $item) {
-            if (substr($row[$item], 0, 3) == 'ID=') {
-                $ID = substr($row[$item], 3);
+            if (substr($row[$item], 0, 7) == 'accept=') {
+                $ID = substr($row[$item], 7);
                 //echo '<td> <a href=\'./views/memberedit.php?ID='.$ID.'\'>'.$ID.'</td>';
-                echo "<td> <A HREF=\"./views/memberedit.php?ID=" . $ID . "\" onClick=\" return popup(this, 'notes')\">" . $ID . "</A> </td>";
-            } else {
+                echo "<td> <A HREF=\"./views/requestsaccept.php?reqid=" . $ID . "\" onClick=\" return popup(this, 'notes')\" title='click here to accept this request'>accept</A> </td>";
+            }
+            elseif(substr($row[$item], 0, 5) == 'deny=')
+            {$ID = substr($row[$item], 5);
+                //echo '<td> <a href=\'./views/memberedit.php?ID='.$ID.'\'>'.$ID.'</td>';
+                echo "<td> <A HREF=\"./views/requestsdeny.php?reqid=" . $ID . "\" onClick=\" return popup(this, 'notes')\" title='click here to deny this request'>deny</A> </td>";
+
+            }
+
+
+            else {
                 echo '<td>' . $row[$item] . '</td>';
             }
         }

@@ -18,7 +18,7 @@ else {
     echo '<h2> Welcome, ' . $_SESSION['name'] . '</h2>';
 
     if (isset($_SESSION["privilege"]) && $_SESSION['privilege'] === 'admin') {
-        echo '<h> You have ' . $_SESSION['privilege'] . ' privilege </h3>';
+        echo '<h> You have ' . $_SESSION['privilege'] . ' privilege </h3><br>';
     }
     //echo $_SESSION['id'];
 
