@@ -9,7 +9,7 @@ $dbname = "webpractice";*/
 $username = "root";
 $password = "";
 $dbname = "conproject";
-
+*/
 
 
 

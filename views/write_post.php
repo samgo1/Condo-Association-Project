@@ -6,7 +6,7 @@
     </div>
   </div>
 
-  <form id="write_post_form" action="\Condo-Association-Project\controllers\post.php" method="post" enctype="multipart/form-data" >
+  <form id="write_post_form" action="\fp\controllers\post.php" method="post" enctype="multipart/form-data" >
     <div class="row">
       <div class="input-field col s4 push-l2">
         <textarea id="content_text" class="materialize-textarea" name="content_text" maxlength="255" data-length="255"></textarea>
@@ -34,7 +34,7 @@
                         SELECT group_id from group_membership WHERE member_id = '{$_SESSION['id']}'))
                     group by id;";
 
-            include_once "../var.php";
+            include_once "var.php";
 
             $conn = mysqli_connect($servername,$username,$password,$dbname);
 
