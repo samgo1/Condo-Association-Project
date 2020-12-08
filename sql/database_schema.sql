@@ -141,7 +141,7 @@ CREATE TABLE `post` (
   `permission` enum('view only','view and comment','view, comment and link') DEFAULT 'view only',
   `author_id` tinyint(3) unsigned NOT NULL,
   `content_text` tinytext,
-  `content_img` varchar(64),
+  `content_img` varchar(255),
   PRIMARY KEY (`id`),
   KEY `author_id` (`author_id`),
   CONSTRAINT `post_ibfk_1` FOREIGN KEY (`author_id`) REFERENCES `member` (`id`)
