@@ -1,4 +1,5 @@
 <?php
+
 include 'var.php';
 //create connection
 $connection = mysqli_connect($servername, $username, $password, $dbname);

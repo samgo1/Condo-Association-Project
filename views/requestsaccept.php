@@ -15,10 +15,10 @@ if(!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] == false)
 //connected
 else {
 
-    echo '<h2> Welcome, ' . $_SESSION['name'] . '</h2>';
+    echo '<h7> Welcome, ' . $_SESSION['name'] . '</h7>';
 
     if (isset($_SESSION["privilege"]) && $_SESSION['privilege'] === 'admin') {
-        echo '<h> You have ' . $_SESSION['privilege'] . ' privilege </h3><br>';
+        echo '<h7> You have ' . $_SESSION['privilege'] . ' privilege </h7><br>';
     }
     //echo $_SESSION['id'];
 
