@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="./css/views/dashboard.css">
     <link rel="stylesheet" href="./css/views/members.css">
     <link rel="stylesheet" href="./css/views/mail.css">
-    <link rel="stylesheet" href="./css/views/groups.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://material.io/resources/icons/?icon=exit_to_app&style=baseline">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
@@ -22,6 +21,7 @@
     <div class="menubar">
         <button onClick="show('dashboard')">Dashboard</button>
         <?php if ($user_signed_in) echo "<button onClick=\"show('mail')\">Mail</button>" ?>
+        <?php if ($user_signed_in) echo "<button onClick=\"show('newMail')\">New Mail</button>" ?>
         <?php if ($user_signed_in) echo "<button onClick=\"show('write_post')\">Write a post</button>" ?>
         <?php if ($user_signed_in) echo "<button onClick=\"show('groups')\">Groups</button>" ?>
         <?php if ($user_signed_in) echo "<button onClick=\"show('members')\">Members</button>" ?>

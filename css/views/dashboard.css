@@ -4,6 +4,12 @@
   overflow-y: scroll;
 }
 
+.dashboardNoScroll {
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+}
+
 .postContainer {
   display: flex;
   flex-direction: column;
