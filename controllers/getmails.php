@@ -7,7 +7,7 @@ if(!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] == false)
 }
 else
 {//user logged in
-	include_once '..\var.php';
+	include_once '../views/var.php';
 	$conn = mysqli_connect($servername,$username,$password,$dbname);
 
 	if (mysqli_connect_errno()) {
