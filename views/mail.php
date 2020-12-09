@@ -1,24 +1,9 @@
+<?php session_start() ?>
+
 <div class="mail">
     <div class="inboxContainer">
         <?php
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
-            include '../components/mail/inboxItem.php';
+            include '../controllers/getmails.php';
         ?>
     </div>
     <div class="messageContainer">

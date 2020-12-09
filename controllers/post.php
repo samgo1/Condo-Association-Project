@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $author_id = $_POST['author_id'];
 $visibility_list = isset($_POST['visibility']) ? $_POST['visibility'] : null;
 $post_permission = $_POST['permission'];
@@ -14,7 +14,7 @@ if ($has_file){
   $target_dir = __DIR__ . "/../posts_pictures/";
   if (!file_exists($target_dir)){
     $result = mkdir($target_dir);
-    if (result == false){
+    if ($result == false){
       echo "didn't work making the directory " . $target_dir;
       exit;
     }
@@ -52,7 +52,8 @@ if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   exit();
 }
-
+$target_dir ="posts_pictures/";
+$target_file = $target_dir . basename($_FILES["file_to_upload"]["name"]);
 $sql = "";
 if ($target_file === null) {
   $sql = "INSERT INTO `post` (date_time, permission, author_id, content_text, content_img) VALUES (

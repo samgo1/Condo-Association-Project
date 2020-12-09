@@ -31,7 +31,7 @@ body {
   grid-row: 2/13;
   grid-column: 1/3;
   background-color: darkgrey;
-  overflow-y: scroll;
+  font-size: 18px;
 }
 
 .mainview {

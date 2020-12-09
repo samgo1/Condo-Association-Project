@@ -1,6 +1,5 @@
-<?php session_start() ?>
-<div class="dashboard">
 <?php
+session_start();
 
 include_once 'var.php';
 $conn = mysqli_connect($servername,$username,$password,$dbname);
@@ -40,7 +39,11 @@ else {
 
   $result0 = $conn->query($sql);
 
+  $rows = [];
+
   while ($row = $result0->fetch_assoc()){
+
+    array_push($rows, $row);
     // get post
     $post_id = $row['post_id'];
     $sql = "SELECT date_time, permission, content_text, content_img, author_id FROM `post`
@@ -55,7 +58,6 @@ else {
     $content_text = $post[2];
     $content_img = $post[3];
     $author_id = $post[4];
-
     $sql = "SELECT name FROM `member` WHERE id ='{$author_id}'";
     $author_name = $conn->query($sql)->fetch_row()[0];
     include "../components/dashboard/post.php";
@@ -63,4 +65,3 @@ else {
   }
 }
 ?>
-</div>

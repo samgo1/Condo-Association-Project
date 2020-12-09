@@ -1,9 +1,7 @@
-<SCRIPT TYPE="text/javascript"> function popup(mylink, windowname)
-    { if (! window.focus)return true; var href; if (typeof(mylink) == 'string') href=mylink; else href=mylink.href; window.open(href, windowname, 'width=600,height=400,scrollbars=yes'); return false; }
-</SCRIPT>
+<?php session_start() ?>
+<div class="dashboard">
+<div class="membersContainer">
 <?php
-
-if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 if(!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] == false)
 {
     echo "Illegal access";
@@ -14,9 +12,7 @@ if(!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] == false)
 
 //connected
 else {
-
-    echo '<h6> Welcome, ' . $_SESSION['name'] . '</h6><br>';
-
+    
     if (isset($_SESSION["privilege"]) && $_SESSION['privilege'] === 'admin') {
         echo '<h6> You have ' . $_SESSION['privilege'] . ' privilege </h6><br>';
     }
@@ -79,3 +75,9 @@ else {
 
 }
 ?>
+</div>
+</div>
+
+<SCRIPT TYPE="text/javascript"> function popup(mylink, windowname)
+  { if (! window.focus)return true; var href; if (typeof(mylink) == 'string') href=mylink; else href=mylink.href; window.open(href, windowname, 'width=600,height=400,scrollbars=yes'); return false; }
+</SCRIPT>

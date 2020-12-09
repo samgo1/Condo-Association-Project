@@ -15,17 +15,6 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
-/* Set a style for all buttons */
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
 button:hover {
   opacity: 0.8;
 }
@@ -127,7 +116,9 @@ span.psw {
 </head>
 <body>
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+<div>
+  <button class="btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+</div>
 
 <div id="id01" class="modal">
   
@@ -144,7 +135,7 @@ span.psw {
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
         
-      <button type="submit">Login</button>
+      <button class="btn" type="submit">Login</button>
      
     </div>
 

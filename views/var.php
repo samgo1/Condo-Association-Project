@@ -1,13 +1,12 @@
 <?php
-
 $servername = "localhost";
+/*
 $username = "adminer";
 $password = "admin";
-$dbname = "webpractice";
+$dbname = "webpractice";*/
 
-echo "<br>";
-echo "Connection: ",$servername,"/",$username,"/",$password,"/",$dbname;
-echo "<br>";
-
+$username = "root";
+$password = "";
+$dbname = "conproject";
 
 ?>

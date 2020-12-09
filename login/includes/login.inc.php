@@ -1,5 +1,6 @@
 <?php
    
+    session_start();
     if (isset($_POST['psw'])&&!empty($_POST['psw'])&&isset($_POST['uid'])&&!empty($_POST['uid']) )  {
 		include_once '../../views/var.php';
 
