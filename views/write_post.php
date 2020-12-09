@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
   <div class="row">
     <div class="col push-l2">
       <h2> Write a post</h2>

@@ -1,4 +1,3 @@
-<?php session_start() ?>;
 <div class="postContainer">
     <div class="postLabel">
         <span name="userInfo">

@@ -1,8 +1,6 @@
-<?php session_start() ?>;
+<?php session_start() ?>
 <div class="dashboard">
 <?php
-
-session_start();
 
 include_once 'var.php';
 $conn = mysqli_connect($servername,$username,$password,$dbname);

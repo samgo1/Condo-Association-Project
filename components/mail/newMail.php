@@ -1,4 +1,4 @@
-<?php session_start() ?>;
+<?php session_start() ?>
 <div class="newMail">
     <form id="write_post_form" action="\Condo-Association-Project\controllers\mailer.php" method="post" enctype="multipart/form-data" >
         <label>To</label>

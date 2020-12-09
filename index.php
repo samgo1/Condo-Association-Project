@@ -1,4 +1,4 @@
-<?php session_start() ?>;
+<?php session_start() ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,8 +14,7 @@
         <link href="https://material.io/resources/icons/?icon=exit_to_app&style=baseline">
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     </head>
-    $user_signed_in = isset($_SESSION["signed_in"])? true : false;?>
-     <body <?php if ($user_signed_in) echo "onload=\"show('dashboard')\""; ?>>
+     <body <?php $user_signed_in = isset($_SESSION["signed_in"])? true : false; if ($user_signed_in) echo "onload=\"show('dashboard')\""; ?>>
         <div class="gridcontainer">
             <div class="header">
                 <img src="./assets/con logo.png" alt="">

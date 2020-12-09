@@ -1,5 +1,4 @@
 <?php
-session_start();
 if(!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] == false)
 {
 	echo'<h3> please login first to submit emails!';
@@ -37,9 +36,6 @@ else {
 	echo "0 results";
 }
   $conn->close();
-
-//echo json_encode($rows);
-
 
 foreach($rows as &$mail){
 
