@@ -59,8 +59,6 @@ else {
     $content_text = $post[2];
     $content_img = $post[3];
     $author_id = $post[4];
-    //echo json_encode($post);
-    echo $content_img;
     $sql = "SELECT name FROM `member` WHERE id ='{$author_id}'";
     $author_name = $conn->query($sql)->fetch_row()[0];
     include "../components/dashboard/post.php";
