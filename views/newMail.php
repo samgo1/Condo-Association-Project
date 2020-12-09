@@ -1,4 +1,10 @@
-<?php session_start() ?>
+<?php 
+session_start(); 
+
+if (isset($_SESSION["privilege"]) && $_SESSION['privilege'] === 'admin') {
+    include '../components/dashboard/admin.php';
+}
+?>
 <div class="dashboardNoScroll">
 <div class="membersContainer">
     <form id="write_post_form" action="\Condo-Association-Project\controllers\mailer.php" method="post" enctype="multipart/form-data" >

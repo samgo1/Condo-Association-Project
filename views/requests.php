@@ -14,7 +14,7 @@ if(!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] == false)
 elseif( isset($_SESSION["privilege"]) && $_SESSION['privilege'] === 'admin') {
     
     if (isset($_SESSION["privilege"]) && $_SESSION['privilege'] === 'admin') {
-        echo '<h6> You have ' . $_SESSION['privilege'] . ' privilege </h6><br>';
+        include '../components/dashboard/admin.php';
     }
     //echo $_SESSION['id'];
 

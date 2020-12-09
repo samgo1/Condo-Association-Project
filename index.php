@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/views/mail.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://material.io/resources/icons/?icon=exit_to_app&style=baseline">
+    <link href="https://material.io/resources/icons/?icon=verified_user&style=baseline">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 <body <?php $user_signed_in = isset($_SESSION["signed_in"])? true : false; if ($user_signed_in) echo "onload=\"show('dashboard')\""; ?>>
