@@ -64,7 +64,5 @@ else {
     include "../components/dashboard/post.php";
 
   }
-
-  echo json_encode($rows);
 }
 ?>

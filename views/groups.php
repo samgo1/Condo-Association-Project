@@ -2,9 +2,10 @@
     { if (! window.focus)return true; var href; if (typeof(mylink) == 'string') href=mylink; else href=mylink.href; window.open(href, windowname, 'width=600,height=600,scrollbars=yes'); return false; }
 </SCRIPT>
 
+<div class="dashboard">
 
-
-<?php
+    <div class="membersContainer">
+    <?php
 if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 if(!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] == false)
 {
@@ -101,3 +102,5 @@ echo "</table>";
 
 }
 ?>
+    </div>
+</div>

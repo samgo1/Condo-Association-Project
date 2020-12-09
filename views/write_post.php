@@ -1,7 +1,7 @@
   <div class="row">
     <div class="col push-l2">
-      <h1> Write a post</h1>
-      <p> writer: <?php session_start(); echo $_SESSION['name']; ?></p>
+      <h2> Write a post</h2>
+      <p> Writer: <?php session_start(); echo $_SESSION['name']; ?></p>
     </div>
   </div>
 
