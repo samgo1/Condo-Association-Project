@@ -53,18 +53,17 @@ if (mysqli_connect_errno()) {
   exit();
 }
 $target_dir ="posts_pictures/";
-$target_file = $target_dir . basename($_FILES["file_to_upload"]["name"]);
 $sql = "";
 if ($target_file === null) {
   $sql = "INSERT INTO `post` (date_time, permission, author_id, content_text, content_img) VALUES (
   '{$date_time}', '{$post_permission}', '{$author_id}', '{$content_text}', NULL
 )";
 } else {
+  $target_file = $target_dir . basename($_FILES["file_to_upload"]["name"]);
   $sql = "INSERT INTO `post` (date_time, permission, author_id, content_text, content_img) VALUES (
   '{$date_time}', '{$post_permission}', '{$author_id}', '{$content_text}', '{$target_file}' 
 )";
 }
-
 $result = $conn->query($sql);
 
 if ($result){
