@@ -36,7 +36,7 @@ else {
   $groups = $result->fetch_all();
   $num_of_groups = sizeof($groups);
   // get post informations
-  $sql = "SELECT post_id FROM `post_visibility` WHERE member_id = \"  {$member_id}  \" ";
+  $sql = "SELECT post_id FROM `post_visibility` pv JOIN  post p ON pv.post_id = p.id WHERE member_id = \"  {$member_id}  \" ORDER BY date_time DESC ";
 
   $result0 = $conn->query($sql);
 
