@@ -9,10 +9,6 @@ if (!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] == false)
 
 elseif (isset($_SESSION["privilege"]) && $_SESSION['privilege'] === 'admin') {
 
-    echo '<h7> Welcome, ' . $_SESSION['name'] . '</h7><br>';
-    echo '<h7> You have ' . $_SESSION['privilege'] . ' privilege </h7><br>';
-
-
 
 //echo $_SESSION['id'];
 
@@ -64,4 +60,4 @@ join member m on co.owner_id = m.id";
 
 }
 else{echo 'You need to be an admin to view the condos page';}
-    ?>
+?>

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $author_id = $_POST['author_id'];
 $visibility_list = isset($_POST['visibility']) ? $_POST['visibility'] : null;
 $post_permission = $_POST['permission'];

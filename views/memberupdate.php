@@ -11,8 +11,6 @@ if(!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] == false)
 //connected
 else {
 
-    echo '<h6> Welcome, ' . $_SESSION['name'] . '</h6><br>';
-
 //echo $_SESSION['id'];
 
 
@@ -53,7 +51,7 @@ else {
             WHERE ID=$ud_ID";
 
 
-    mysqli_query($connection, $query) or die(mysqli_error());
+    mysqli_query($connection, $query) or die(mysqli_error($connection));
     if ($connection->affected_rows >= 1) {
         echo "<p>($ud_ID) Record Updated<p>";
     } else {

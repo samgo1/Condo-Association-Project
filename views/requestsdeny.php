@@ -14,9 +14,7 @@ if(!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] == false)
 
 //connected
 else {
-
-    echo '<h7> Welcome, ' . $_SESSION['name'] . '</h7>';
-
+    
     if (isset($_SESSION["privilege"]) && $_SESSION['privilege'] === 'admin') {
         echo '<h7> You have ' . $_SESSION['privilege'] . ' privilege </h7><br>';
     }

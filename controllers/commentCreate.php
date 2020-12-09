@@ -5,7 +5,7 @@
  * Date: 12/8/2020
  * Time: 4:02 PM
  */
-
+session_start();
 include_once '../views/var.php';
 
 $conn = mysqli_connect($servername,$username,$password,$dbname);

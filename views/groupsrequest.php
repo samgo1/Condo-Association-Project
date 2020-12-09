@@ -14,9 +14,6 @@ if(!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] == false)
 
 //connected
 else {
-
-    echo '<h2> Welcome, ' . $_SESSION['name'] . '</h2>';
-
     //echo $_SESSION['id'];
 
     include 'var.php';

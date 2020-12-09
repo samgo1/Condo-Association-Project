@@ -29,6 +29,7 @@
                 <?php if ($user_signed_in) echo "<button onClick=\"show('requests')\">Requests</button>" ?>
                 <?php if ($user_signed_in) echo "<button onClick=\"show('logout')\">Logout</button>" ?>
             </div>
+            <div class="profile"></div>
             <div class="mainview" id="mainView"></div>
         </div>
         <script src="index.js"></script>

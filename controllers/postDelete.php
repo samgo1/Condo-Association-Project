@@ -6,7 +6,7 @@
  * Time: 5:02 PM
  */
 
-
+session_start();
 include_once '../views/var.php';
 
 $conn = mysqli_connect($servername,$username,$password,$dbname);
