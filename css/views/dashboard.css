@@ -4,6 +4,12 @@
   overflow-y: scroll;
 }
 
+.dashboardNoScroll {
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+}
+
 .postContainer {
   display: flex;
   flex-direction: column;
@@ -50,4 +56,29 @@
 
 .commenter {
   font-weight: 600;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  height: 5%;
+}
+
+.admin {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  width: 10%;
+  height: 9%;
+}
+
+.admin span {
+  margin-right: 3px;
+  font-size: 1.5em;
+  font-weight: 300;
 }

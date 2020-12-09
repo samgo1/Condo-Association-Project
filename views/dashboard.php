@@ -1,4 +1,4 @@
-<?php session_start() ?>
+<?php session_start(); ?>
 <div class="dashboard">
 <?php
 
@@ -20,10 +20,10 @@ if(!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] == false)
 }//connected
 else {
 
-    echo '<h2> Welcome, ' . $_SESSION['name'] . '</h2>';
+    echo "<div class=\"userInfo\"><h2> Welcome, " . $_SESSION['name'] . "</h2></div>";
 
     if (isset($_SESSION["privilege"]) && $_SESSION['privilege'] === 'admin') {
-        echo '<h> your have ' . $_SESSION['privilege'] . ' privilege </h3>';
+        include '../components/dashboard/admin.php';
     }
 
   $member_id = $_SESSION['id'];
@@ -36,11 +36,15 @@ else {
   $groups = $result->fetch_all();
   $num_of_groups = sizeof($groups);
   // get post informations
-  $sql = "SELECT post_id FROM `post_visibility` WHERE member_id = \"  {$member_id}  \" ";
+  $sql = "SELECT post_id FROM `post_visibility` pv JOIN  post p ON pv.post_id = p.id WHERE member_id = \"  {$member_id}  \" ORDER BY date_time DESC ";
 
   $result0 = $conn->query($sql);
 
+  $rows = [];
+
   while ($row = $result0->fetch_assoc()){
+
+    array_push($rows, $row);
     // get post
     $post_id = $row['post_id'];
     $sql = "SELECT date_time, permission, content_text, content_img, author_id FROM `post`
@@ -55,7 +59,6 @@ else {
     $content_text = $post[2];
     $content_img = $post[3];
     $author_id = $post[4];
-
     $sql = "SELECT name FROM `member` WHERE id ='{$author_id}'";
     $author_name = $conn->query($sql)->fetch_row()[0];
     include "../components/dashboard/post.php";

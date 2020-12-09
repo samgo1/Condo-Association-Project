@@ -1,4 +1,11 @@
-<?php session_start();?>
+<?php 
+
+session_start();
+
+if (isset($_SESSION["privilege"]) && $_SESSION['privilege'] === 'admin') {
+  include '../components/dashboard/admin.php';
+}
+?>
     <div class="row">
     <div class="col push-l2">
       <h2> Write a post</h2>

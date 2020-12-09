@@ -45,8 +45,20 @@ foreach($rows as &$mail){
 
 function showMailItem($senderName, $senderID, $dateSent, $content){
 
-    echo "<div class=\"inboxItem\" onclick=\"showMessageItem('$senderName', '$senderID', '$dateSent', '$content')\">
-    <div name=\"sender\" class=\"sender\">$senderName $senderID</div>
-    <div name=\"subject\" class=\"subject\">$dateSent</div></div>";
+    echo " <div class=\"postContainer\">
+    <div class=\"postLabel\">
+        From: <span>$senderName</span> 
+    </div>
+    <div>
+        ID: <span>$senderID</span>
+    </div>
+    <div>
+        Sent: <span>$dateSent</span> 
+    </div>
+
+    <div class=\"content\">
+		$content
+    </div>
+</div>";
 }
 ?>

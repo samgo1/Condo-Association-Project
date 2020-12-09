@@ -11,7 +11,7 @@ if (!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] == false)
 
 elseif (isset($_SESSION["privilege"]) && $_SESSION['privilege'] === 'admin') {
 
-
+    include '../components/dashboard/admin.php';
 //echo $_SESSION['id'];
 
     include 'var.php';
