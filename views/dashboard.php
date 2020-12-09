@@ -1,3 +1,4 @@
+<?php session_start() ?>;
 <div class="dashboard">
 <?php
 

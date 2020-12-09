@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: samuelg
- * Date: 12/8/2020
- * Time: 5:02 PM
- */
 
 session_start();
 include_once '../views/var.php';

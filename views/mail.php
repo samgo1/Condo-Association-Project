@@ -1,3 +1,5 @@
+<?php session_start() ?>;
+
 <div class="mail">
     <div class="inboxContainer">
         <?php
