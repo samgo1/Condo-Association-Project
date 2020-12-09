@@ -33,9 +33,10 @@ if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {
 	  array_push($rows, $row);
 	}
-  } else {
+} 
+else {
 	echo "0 results";
-  }
+}
   $conn->close();
 
 //echo json_encode($rows);

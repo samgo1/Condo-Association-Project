@@ -22,7 +22,15 @@
         </span>
     </div>
     <div name="content" class="content">
-        <?php echo $content_text; ?>
+        <?php echo $content_text; 
+        
+            if ($content_img != null){
+                echo "
+                <div class=\"imageContainer\">
+                    <img class=\"image\" src=\"posts_pictures/jackie.jpg\" alt=\"\" height=\"25%\" width=\"25%\">
+                </div>";
+            }
+        ?>
     </div>
 
     <?php
@@ -74,7 +82,7 @@
         if ($author_id === $member_id){
             echo '<form action="/Condo-Association-Project/controllers/postDelete.php" method="post">';
             echo "    <input type=\"hidden\" name=\"post_id\" value=\"" . $post_id . "\" >";
-            echo '    <button class="btn" type="submit">Delete Post</button>';
+            echo '    <br><button class="btn" type="submit">Delete Post</button>';
             echo '</form>';
         }
 

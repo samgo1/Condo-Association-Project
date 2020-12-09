@@ -2,9 +2,6 @@
     <div class="inboxContainer">
         <?php
             include '../controllers/getmails.php';
-            //include '../controllers/getMailItem.php';
-            //showMailItem('Radley Carpio', '123', '2020/12/08', '','');
-            //showMailItem('Radley Carpio', '123', '2020/12/09', 'a;lkdsfjl;asdkfjlsjfalsdkfj','');
         ?>
     </div>
     <div class="messageContainer">

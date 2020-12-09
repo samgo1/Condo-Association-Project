@@ -31,6 +31,19 @@
   padding: 15px;
 }
 
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.image {
+  height: 30%;
+  width: 30%;
+  border-radius: 10px;
+}
+
 .comments {
   list-style-type: none;
 }
