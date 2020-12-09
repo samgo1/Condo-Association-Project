@@ -1,7 +1,8 @@
-  <div class="row">
+<?php session_start();?>
+    <div class="row">
     <div class="col push-l2">
       <h2> Write a post</h2>
-      <p> Writer: <?php session_start(); echo $_SESSION['name']; ?></p>
+      <p> Writer: <?php echo $_SESSION['name']; ?></p>
     </div>
   </div>
 
