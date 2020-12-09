@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
   <div class="row">
     <div class="col push-l2">
       <h1> Write a post</h1>
@@ -28,7 +30,6 @@
         <label>post visibility</label>
         <select id="visibility_list" name="visibility[]" multiple="multiple">
           <?php
-            if(session_status() !== PHP_SESSION_ACTIVE) session_start();
             $sql = "SELECT id, name FROM member WHERE id IN (
                       SELECT member_id FROM group_membership WHERE group_id IN (
                         SELECT group_id from group_membership WHERE member_id = '{$_SESSION['id']}'))

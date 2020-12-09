@@ -1,9 +1,9 @@
 <?php
 
 $servername = "localhost";
-$username = "adminer";
+$username = "root";
 $password = "admin";
-$dbname = "webpractice";
+$dbname = "comp353_project";
 
 echo "<br>";
 echo "Connection: ",$servername,"/",$username,"/",$password,"/",$dbname;
