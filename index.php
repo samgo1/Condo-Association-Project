@@ -1,5 +1,5 @@
+<?php session_start() ?>;
 <!DOCTYPE html>
-<?php if(session_status() !== PHP_SESSION_ACTIVE) session_start();?>
 <html>
     <head>
         <title>Con System</title>
@@ -14,7 +14,6 @@
         <link href="https://material.io/resources/icons/?icon=exit_to_app&style=baseline">
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     </head>
-    <?php if(session_status() !== PHP_SESSION_ACTIVE) session_start();
     $user_signed_in = isset($_SESSION["signed_in"])? true : false;?>
      <body <?php if ($user_signed_in) echo "onload=\"show('dashboard')\""; ?>>
         <div class="gridcontainer">

@@ -1,9 +1,5 @@
-<SCRIPT TYPE="text/javascript"> function popup(mylink, windowname)
-    { if (! window.focus)return true; var href; if (typeof(mylink) == 'string') href=mylink; else href=mylink.href; window.open(href, windowname, 'width=600,height=400,scrollbars=yes'); return false; }
-</SCRIPT>
 <?php
-
-if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+session_start();
 if(!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] == false)
 {
     echo "Illegal access";
@@ -64,3 +60,6 @@ values((select group_ID from requests where reqid='.$reqid.'),(select user_ID fr
     echo '<button onclick="self.close()">Close current popup</button>';
 }
 ?>
+<SCRIPT TYPE="text/javascript"> function popup(mylink, windowname)
+  { if (! window.focus)return true; var href; if (typeof(mylink) == 'string') href=mylink; else href=mylink.href; window.open(href, windowname, 'width=600,height=400,scrollbars=yes'); return false; }
+</SCRIPT>

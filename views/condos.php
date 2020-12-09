@@ -1,7 +1,7 @@
 <div class="dashboard">
     <div class="membersContainer">
-    <?php
-if (session_status() !== PHP_SESSION_ACTIVE) session_start();
+<?php
+    session_start();
 if (!isset($_SESSION['signed_in']) || $_SESSION['signed_in'] == false)
 {
     echo "Illegal access";
