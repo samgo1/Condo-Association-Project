@@ -44,7 +44,7 @@ if ($has_file){
   }
 }
 
-include_once "../var.php";
+include_once "../views/var.php";
 
 $conn = mysqli_connect($servername,$username,$password,$dbname);
 
@@ -95,7 +95,7 @@ if ($result){
 
 //$filename = basename($_FILES["file_to_upload"]["name"]);
 //echo "<img src=\"/Condo-Association-Project/posts_pictures/" . $filename . "\" />";
-echo "    <a href=\"/Condo-Association-Project/index.php\">go to main page</a>";
+echo '   <a href="../index.php">go to main page</a>';
 
 
 
