@@ -27,7 +27,7 @@
             if ($content_img != null){
                 echo "
                 <div class=\"imageContainer\">
-                    <img class=\"image\" src=\"posts_pictures/jackie.jpg\" alt=\"\" height=\"25%\" width=\"25%\">
+                    <img class=\"image\" src=\"$content_img\" height=\"25%\" width=\"25%\">
                 </div>";
             }
         ?>
